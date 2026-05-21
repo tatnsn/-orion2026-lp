@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORiON制作委員会 | 出会いは、設計され、連鎖する。</title>
+<meta name="description" content="ORiON制作委員会は、アイドルプロデュース・イベント企画制作運営・データ活用・DX推進を手がけるイベント制作チームです。リアルとテクノロジーで、出会いを設計し、つなぎ続けます。">
+<meta name="keywords" content="ORiON,イベント制作,アイドルプロデュース,ライブ,サーキットフェス,上野,七夕,TANABATA,Etoile,DX">
+<meta name="author" content="ORiON制作委員会">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://orion2026.jp/">
+
+<!-- OGP (SNSシェア用) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ORiON制作委員会 | 出会いは、設計され、連鎖する。">
+<meta property="og:description" content="アイドルプロデュースとイベント企画・制作・運営を手がけるイベント制作チーム。データとテクノロジーで、出会いを設計します。">
+<meta property="og:url" content="https://orion2026.jp/">
+<meta property="og:site_name" content="ORiON制作委員会">
+<meta property="og:image" content="https://orion2026.jp/orion-logo.png">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@_info_Etoile">
+<meta name="twitter:title" content="ORiON制作委員会 | 出会いは、設計され、連鎖する。">
+<meta name="twitter:description" content="アイドルプロデュースとイベント企画・制作・運営を手がけるイベント制作チーム。データとテクノロジーで、出会いを設計します。">
+<meta name="twitter:image" content="https://orion2026.jp/orion-logo.png">
+
+<!-- 構造化データ (Google検索リッチリザルト用) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://orion2026.jp/#organization",
+      "name": "ORiON制作委員会",
+      "url": "https://orion2026.jp",
+      "logo": "https://orion2026.jp/orion-logo.png",
+      "description": "アイドルプロデュースとイベント企画・制作・運営を手がけるイベント制作チーム。データとテクノロジーで、出会いを設計します。",
+      "email": "yoshimura@orion2026.jp",
+      "sameAs": ["https://x.com/_info_Etoile"]
+    },
+    {
+      "@type": "Event",
+      "name": "Etoile TANABATA FESTIVAL 2026",
+      "startDate": "2026-07-07",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "description": "ORiON制作委員会主催のサーキットフェスティバル。上野2会場で開催。",
+      "organizer": { "@id": "https://orion2026.jp/#organization" },
+      "location": [
+        {
+          "@type": "Place",
+          "name": "上野恩賜公園 野外ステージ",
+          "address": { "@type": "PostalAddress", "addressLocality": "台東区", "addressRegion": "東京都", "addressCountry": "JP" }
+        },
+        {
+          "@type": "Place",
+          "name": "上野ニコニコ劇場",
+          "address": { "@type": "PostalAddress", "addressLocality": "台東区", "addressRegion": "東京都", "addressCountry": "JP" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Bebas+Neue&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #03050f;
+    --deep: #07091a;
+    --navy: #0d1230;
+    --mid: #131840;
+    --cyan: #4fc3f7;
+    --cyan-bright: #80deea;
+    --gold: #e8c96b;
+    --gold-dim: #a8893b;
+    --white: #e8eaf6;
+    --muted: #7986cb;
+    --dim: rgba(255,255,255,0.12);
+    --card-bg: rgba(13,18,48,0.7);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--white);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--void); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    height: 64px;
+    background: rgba(3,5,15,0.6);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(79,195,247,0.08);
+    transition: background 0.4s;
+  }
+  nav.scrolled { background: rgba(3,5,15,0.92); }
+
+  .nav-logo {
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .nav-logo img { height: 36px; width: auto; display: block; }
+  .nav-logo-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgba(232,234,246,0.5);
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(232,234,246,0.7);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px; background: var(--cyan);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .nav-links a:hover { color: var(--cyan); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-toggle span { width: 24px; height: 1px; background: var(--white); transition: 0.3s; }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative; height: 100svh; min-height: 640px;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    overflow: hidden;
+    padding-top: 64px;
+    box-sizing: border-box;
+  }
+
+  #starCanvas {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .hero-logo {
+    width: clamp(110px, 18vw, 170px);
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+    opacity: 0;
+    animation: fadeUp 1s 0.4s forwards;
+    filter: drop-shadow(0 0 20px rgba(79,195,247,0.5)) drop-shadow(0 0 50px rgba(79,195,247,0.2));
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.65s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+    font-size: clamp(2.2rem, 6.5vw, 5rem);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeUp 1s 0.9s forwards;
+  }
+  @media (max-width: 480px) {
+    .hero-title { white-space: normal; font-size: 27px; letter-spacing: 0.08em; line-height: 1.5; }
+    .hero-label { white-space: normal; text-align: center; line-height: 1.7; letter-spacing: 0.16em; font-size: 0.6rem; }
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-style: italic;
+    color: rgba(232,234,246,0.55);
+    margin-top: 1.5rem;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    animation: fadeUp 1s 1.15s forwards;
+  }
+
+  .hero-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-top: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s 1.4s forwards;
+  }
+
+  .hero-cta {
+    margin-top: 3rem;
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s 1.7s forwards;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 2.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--void); }
+
+  .btn-outline {
+    padding: 0.75rem 2.5rem;
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--cyan);
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn-outline:hover { background: rgba(79,195,247,0.1); }
+
+  .scroll-indicator {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    margin-top: 2.5rem;
+    opacity: 0; animation: fadeUp 1s 2.2s forwards;
+  }
+  .scroll-indicator span {
+    font-size: 0.62rem; letter-spacing: 0.3em; color: var(--muted);
+  }
+  .scroll-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: clamp(5rem, 10vh, 8rem) clamp(1.5rem, 8vw, 8rem); }
+
+  .section-header {
+    margin-bottom: 4rem;
+  }
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.7rem, 4.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .section-title .em { color: var(--gold); font-style: italic; }
+
+  .divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin-top: 1.5rem;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--deep); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: rgba(232,234,246,0.72);
+    margin-bottom: 1.4rem;
+  }
+
+  .about-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.45rem 1.1rem;
+    border: 1px solid rgba(232,201,107,0.25);
+    color: var(--gold);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    border-radius: 2px;
+    background: rgba(232,201,107,0.05);
+    margin-top: 0.5rem;
+  }
+  .about-badge::before { content: '◆'; font-size: 0.5rem; }
+
+  .about-visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .constellation-svg {
+    width: 100%; max-width: 360px;
+    opacity: 0.85;
+  }
+
+  /* ─── STRENGTHS ─── */
+  #strengths { background: var(--void); }
+
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(79,195,247,0.06);
+    border: 1px solid rgba(79,195,247,0.06);
+  }
+
+  .strength-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .strength-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--cyan));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .strength-card:hover { background: rgba(13,18,48,0.95); }
+  .strength-card:hover::before { transform: scaleX(1); }
+
+  .card-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: rgba(79,195,247,0.08);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+  }
+  .strength-card:hover .card-num { color: rgba(79,195,247,0.18); }
+
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-desc {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: rgba(232,234,246,0.55);
+  }
+
+  .card-tag {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(79,195,247,0.2);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--cyan);
+    border-radius: 1px;
+  }
+
+  /* ─── SCHEDULE ─── */
+  #schedule { background: var(--deep); }
+
+  .schedule-intro {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: rgba(232,234,246,0.6);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .event-list {
+    display: flex; flex-direction: column; gap: 1px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(79,195,247,0.06);
+  }
+
+  .event-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.75rem 2rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .event-item:hover { background: rgba(13,18,48,0.95); }
+
+  .event-date {
+    text-align: center;
+  }
+  .event-date .month {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    display: block;
+  }
+  .event-date .day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--white);
+  }
+  .event-date .year {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+  }
+
+  .event-info .event-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.04em;
+  }
+  .event-info .event-venue {
+    font-size: 0.75rem;
+    color: rgba(232,234,246,0.5);
+    letter-spacing: 0.08em;
+  }
+  .event-info .event-venue::before {
+    content: '📍 ';
+    font-size: 0.65rem;
+  }
+  .event-tag-circuit {
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    border: 1px solid rgba(232,201,107,0.25);
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    margin: 0.35rem 0 0.5rem;
+  }
+  .event-item--circuit .event-venue {
+    margin-top: 0.2rem;
+  }
+
+  .event-status {
+    padding: 0.3rem 0.9rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    border-radius: 1px;
+    white-space: nowrap;
+  }
+  .status-upcoming {
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--cyan);
+    background: rgba(79,195,247,0.05);
+  }
+  .status-soon {
+    border: 1px solid rgba(232,201,107,0.5);
+    color: var(--gold);
+    background: rgba(232,201,107,0.06);
+  }
+  .status-tbd {
+    border: 1px solid rgba(232,234,246,0.15);
+    color: rgba(232,234,246,0.4);
+  }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--void); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: rgba(232,234,246,0.6);
+    margin-bottom: 2rem;
+  }
+
+  .contact-meta {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .contact-meta-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.8rem;
+    color: rgba(232,234,246,0.7);
+  }
+  .contact-meta-item .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--cyan);
+    min-width: 60px;
+  }
+
+  .contact-form {
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: rgba(13,18,48,0.8);
+    border: 1px solid rgba(79,195,247,0.12);
+    border-radius: 0;
+    padding: 0.85rem 1rem;
+    color: var(--white);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: rgba(79,195,247,0.5);
+    background: rgba(13,18,48,0.95);
+  }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(232,201,107,0.15), rgba(79,195,247,0.1));
+    border: 1px solid rgba(232,201,107,0.35);
+    color: var(--gold);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(135deg, rgba(232,201,107,0.25), rgba(79,195,247,0.15));
+    border-color: rgba(232,201,107,0.6);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid rgba(79,195,247,0.06);
+    padding: 3rem clamp(1.5rem, 8vw, 8rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .footer-logo img { height: 28px; width: auto; opacity: 0.6; }
+  .footer-logo-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgba(232,234,246,0.3);
+  }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(232,234,246,0.25);
+  }
+
+  .footer-links {
+    display: flex; gap: 1.5rem; list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.7rem;
+    color: rgba(232,234,246,0.35);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--cyan); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 1; transform: scaleY(1.1); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50%       { opacity: 1; transform: scale(1.05); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+  .reveal-delay-4 { transition-delay: 0.6s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    /* Nav */
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-links-mobile {
+      display: none;
+      flex-direction: column;
+      list-style: none;
+      position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+      background: rgba(3,5,15,0.97);
+      align-items: center; justify-content: center;
+      gap: 2.5rem; z-index: 200;
+    }
+    .nav-links-mobile.open { display: flex; }
+    .nav-links-mobile a {
+      color: rgba(232,234,246,0.7);
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      transition: color 0.3s;
+    }
+    .nav-links-mobile a:hover { color: var(--cyan); }
+
+    /* Hero */
+    #hero { min-height: 100svh; }
+    .hero-content { padding: 0 1.25rem; }
+    .hero-logo { width: clamp(90px, 30vw, 130px); margin-bottom: 1.5rem; }
+    .hero-label { font-size: 0.62rem; letter-spacing: 0.25em; }
+    .hero-cta { gap: 0.75rem; }
+    .btn-primary, .btn-outline { padding: 0.65rem 1.5rem; font-size: 0.75rem; }
+
+    /* Sections */
+    section { padding: 4rem 1.25rem; }
+    .section-header { margin-bottom: 2.5rem; }
+
+    /* About */
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-visual { display: none; }
+
+    /* Strengths */
+    .strengths-grid { grid-template-columns: 1fr; }
+    .strength-card { padding: 2rem 1.5rem; }
+
+    /* Schedule */
+    .event-item {
+      grid-template-columns: 80px 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.75rem 1rem;
+      padding: 1.25rem 1rem;
+    }
+    .event-status {
+      grid-column: 2; grid-row: 2;
+      justify-self: start; margin-top: 0.25rem;
+    }
+    .event-date .day { font-size: 1.8rem; }
+    .event-info .event-name { font-size: 0.85rem; }
+
+    /* Contact */
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-meta-item { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+
+    /* Footer */
+    footer { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 2rem 1.25rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-sub { font-size: 0.9rem; }
+    .hero-tagline { font-size: 0.62rem; letter-spacing: 0.18em; }
+    .section-title { font-size: clamp(1.4rem, 6.5vw, 1.9rem); }
+  }
+
+  @media (max-height: 750px) {
+    .hero-logo { width: clamp(70px, 12vw, 110px); margin-bottom: 1rem; }
+    .hero-sub { margin-top: 0.75rem; }
+    .hero-tagline { margin-top: 0.75rem; }
+    .hero-cta { margin-top: 1.5rem; gap: 0.75rem; }
+    .scroll-indicator { display: none; }
+  }
+
+  @media (max-height: 600px) {
+    .hero-content { margin-top: 0; }
+    .hero-label { margin-bottom: 0.75rem; }
+    .hero-title { font-size: clamp(1.6rem, 5vw, 3rem); }
+    .hero-sub { margin-top: 0.5rem; font-size: 0.9rem; }
+    .hero-tagline { margin-top: 0.5rem; }
+    .hero-cta { margin-top: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <img src="orion-logo.png" alt="ORiON">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#strengths">STRENGTHS</a></li>
+    <li><a href="#schedule">SCHEDULE</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" onclick="toggleMenu()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<!-- mobile nav overlay (outside nav to avoid fixed-in-fixed containing block bug) -->
+<ul class="nav-links-mobile" id="navLinksMobile">
+  <li><a href="#about">ABOUT</a></li>
+  <li><a href="#strengths">STRENGTHS</a></li>
+  <li><a href="#schedule">SCHEDULE</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+</ul>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <canvas id="starCanvas"></canvas>
+  <div class="hero-content">
+    <img src="orion-logo.png" alt="ORiON" class="hero-logo">
+    <p class="hero-label">ORiON 制作委員会 — Event Production Team</p>
+    <h1 class="hero-title"><span class="t1">出会いは、</span><span class="t2">設計され、</span><br><span class="t3">連鎖する。</span></h1>
+    <p class="hero-sub">星を繋ぐように、人と価値を繋ぐ。</p>
+    <p class="hero-tagline">— CONNECTING STARS, CREATING MOMENTS —</p>
+    <div class="hero-cta">
+      <a href="#strengths" class="btn-primary">実績・強み</a>
+      <a href="#contact" class="btn-outline">お問い合わせ</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-header">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">点を、<span class="em">線にする。</span><br><span style="white-space:nowrap">出会いに、意味を与える。</span></h2>
+        <div class="divider"></div>
+      </div>
+      <p>人と人がつながり、新しい何かが生まれる場をつくる。<br>それが、ORiONの出発点です。</p>
+      <p>ORiONは、出会いを偶然に任せず「設計」します。ライブやイベントを軸に、人・コンテンツ・コミュニティをつなぎ、関係性をつくり続けていきます。</p>
+      <p>テクノロジーを活用し、その出会いを一度きりで終わらせない仕組みを目指しています。現在はイベント制作チームとして活動中。近日中の法人化を目指しています。</p>
+      <span class="about-badge">法人化準備中</span>
+    </div>
+    <div class="about-visual">
+      <svg class="constellation-svg" viewBox="0 0 360 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Orion constellation stylized -->
+        <!-- Stars -->
+        <circle cx="180" cy="60"  r="6" fill="#e8c96b" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.5;0.9" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="230" cy="95"  r="4" fill="#4fc3f7" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="130" cy="95"  r="4" fill="#4fc3f7" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.8s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Belt of Orion -->
+        <circle cx="155" cy="195" r="5" fill="#e8eaf6" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.6;0.9" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="183" cy="205" r="5" fill="#e8eaf6" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2.1s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="211" cy="195" r="5" fill="#e8eaf6" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.6;0.9" dur="1.6s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Feet -->
+        <circle cx="140" cy="310" r="6" fill="#80deea" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="225" cy="320" r="5" fill="#80deea" opacity="0.75">
+          <animate attributeName="opacity" values="0.75;0.35;0.75" dur="3.2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Lines connecting constellation -->
+        <line x1="180" y1="60"  x2="230" y2="95"  stroke="#4fc3f7" stroke-width="0.7" opacity="0.3"/>
+        <line x1="180" y1="60"  x2="130" y2="95"  stroke="#4fc3f7" stroke-width="0.7" opacity="0.3"/>
+        <line x1="230" y1="95"  x2="211" y2="195" stroke="#e8eaf6" stroke-width="0.7" opacity="0.2"/>
+        <line x1="130" y1="95"  x2="155" y2="195" stroke="#e8eaf6" stroke-width="0.7" opacity="0.2"/>
+        <line x1="155" y1="195" x2="183" y2="205" stroke="#e8eaf6" stroke-width="0.9" opacity="0.4"/>
+        <line x1="183" y1="205" x2="211" y2="195" stroke="#e8eaf6" stroke-width="0.9" opacity="0.4"/>
+        <line x1="155" y1="195" x2="140" y2="310" stroke="#80deea" stroke-width="0.7" opacity="0.25"/>
+        <line x1="211" y1="195" x2="225" y2="320" stroke="#80deea" stroke-width="0.7" opacity="0.25"/>
+
+        <!-- Decorative ring -->
+        <circle cx="183" cy="190" r="120" stroke="rgba(79,195,247,0.06)" stroke-width="1" stroke-dasharray="4 8"/>
+        <circle cx="183" cy="190" r="160" stroke="rgba(232,201,107,0.04)" stroke-width="1" stroke-dasharray="2 12"/>
+
+        <!-- Small ambient stars -->
+        <circle cx="80"  cy="150" r="1.5" fill="#e8eaf6" opacity="0.4"/>
+        <circle cx="300" cy="130" r="1"   fill="#e8eaf6" opacity="0.3"/>
+        <circle cx="60"  cy="260" r="1"   fill="#4fc3f7" opacity="0.35"/>
+        <circle cx="310" cy="280" r="1.5" fill="#e8c96b" opacity="0.3"/>
+        <circle cx="100" cy="350" r="1"   fill="#e8eaf6" opacity="0.25"/>
+        <circle cx="270" cy="60"  r="1"   fill="#e8eaf6" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STRENGTHS ─── -->
+<section id="strengths">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-header reveal">
+      <span class="section-label">Strengths</span>
+      <h2 class="section-title">実績と<span class="em">強み</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-card reveal reveal-delay-1">
+        <div class="card-num">01</div>
+        <span class="card-icon">✦</span>
+        <h3 class="card-title">アイドルプロデュース</h3>
+        <p class="card-desc">グループアイドルの育成から、コンセプト設計・楽曲制作・ビジュアル統括まで。アーティストの世界観を核に、ファンとの絆を育てるプロデュースを行います。</p>
+        <span class="card-tag">IDOL PRODUCE</span>
+      </div>
+      <div class="strength-card reveal reveal-delay-2">
+        <div class="card-num">02</div>
+        <span class="card-icon">◈</span>
+        <h3 class="card-title">イベント主催・制作・運営</h3>
+        <p class="card-desc">企画立案からステージ設計、当日運営まで一気通貫で対応。ライブ・展示会・コラボイベントなど、規模や形態を問わずあらゆる現場に対応します。</p>
+        <span class="card-tag">EVENT PRODUCTION</span>
+      </div>
+      <div class="strength-card reveal reveal-delay-3">
+        <div class="card-num">03</div>
+        <span class="card-icon">◇</span>
+        <h3 class="card-title">データを用いた企画設計</h3>
+        <p class="card-desc">来場者データ・チケット販売傾向・SNS反応を分析し、次のイベント企画にフィードバック。勘や経験だけに頼らない、データドリブンな意思決定を実現します。</p>
+        <span class="card-tag">DATA-DRIVEN PLANNING</span>
+      </div>
+      <div class="strength-card reveal reveal-delay-4">
+        <div class="card-num">04</div>
+        <span class="card-icon">⬡</span>
+        <h3 class="card-title">イベントDX・アプリ開発</h3>
+        <p class="card-desc">チケット管理・入場管理・ファンコミュニティなど、イベント運営を効率化・高度化するオリジナルアプリケーションの設計・開発を推進します。</p>
+        <span class="card-tag">DX & APP DEV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCHEDULE ─── -->
+<section id="schedule">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div class="section-header reveal">
+      <span class="section-label">Schedule</span>
+      <h2 class="section-title">主催イベント<span class="em">スケジュール</span></h2>
+      <div class="divider"></div>
+    </div>
+    <p class="schedule-intro reveal">ORiON制作委員会が主催・企画するイベント情報をお届けします。最新情報はSNSおよびお問い合わせフォームからもご確認いただけます。</p>
+
+    <div class="event-list reveal">
+
+      <div class="event-item">
+        <div class="event-date">
+          <span class="month">Jun</span>
+          <span class="day">12</span>
+          <span class="year">2026</span>
+        </div>
+        <div class="event-info">
+          <p class="event-name">Etoile June bride FESTIVAL</p>
+          <p class="event-venue">上野恩賜公園 野外ステージ</p>
+        </div>
+        <span class="event-status status-soon">SOON</span>
+      </div>
+
+      <div class="event-item event-item--circuit">
+        <div class="event-date">
+          <span class="month">Jul</span>
+          <span class="day">07</span>
+          <span class="year">2026</span>
+        </div>
+        <div class="event-info">
+          <p class="event-name">Etoile TANABATA FESTIVAL 2026</p>
+          <p class="event-tag-circuit">CIRCUIT FESTIVAL</p>
+          <p class="event-venue">上野恩賜公園 野外ステージ</p>
+          <p class="event-venue">上野ニコニコ劇場</p>
+        </div>
+        <span class="event-status status-soon">SOON</span>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">
+          <span class="month">—</span>
+          <span class="day" style="font-size:1.4rem;line-height:1.4;">TBD</span>
+          <span class="year">2026</span>
+        </div>
+        <div class="event-info">
+          <p class="event-name">Next Event</p>
+          <p class="event-venue">詳細未定</p>
+        </div>
+        <span class="event-status status-tbd">TBD</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="section-header">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">お問い<span class="em">合わせ</span></h2>
+        <div class="divider"></div>
+      </div>
+      <p>イベント出演・コラボレーション・取材・その他のご相談はお気軽にお問い合わせください。通常3営業日以内にご返答いたします。</p>
+      <div class="contact-meta">
+        <div class="contact-meta-item">
+          <span class="label">EMAIL</span>
+          <span>info@orion2026.jp</span>
+        </div>
+        <div class="contact-meta-item">
+          <span class="label">X (Twitter)</span>
+          <a href="https://x.com/_info_Etoile" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='inherit'">@_info_Etoile</a>
+        </div>
+        <div class="contact-meta-item">
+          <span class="label">拠点</span>
+          <span>東京都</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal reveal-delay-1" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label for="org">会社・団体名</label>
+          <input type="text" id="org" name="org" placeholder="任意">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="form-group">
+        <label for="category">お問い合わせ種別</label>
+        <select id="category" name="category">
+          <option value="">選択してください</option>
+          <option>イベント出演・コラボ</option>
+          <option>アイドルプロデュース依頼</option>
+          <option>スポンサー・協賛</option>
+          <option>取材・メディア</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">メッセージ</label>
+        <textarea id="message" name="message" placeholder="ご用件をお書きください" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">送 信 す る</button>
+    </form>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">
+    <svg width="28" height="28" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="72" stroke="white" stroke-width="2" opacity="0.5"/>
+      <ellipse cx="100" cy="100" rx="72" ry="32" stroke="white" stroke-width="1.5" opacity="0.4" transform="rotate(-30 100 100)"/>
+      <ellipse cx="100" cy="100" rx="72" ry="32" stroke="#4fc3f7" stroke-width="1.2" opacity="0.35" transform="rotate(30 100 100)"/>
+      <circle cx="44" cy="72" r="6" fill="white" opacity="0.6"/>
+      <circle cx="152" cy="48" r="5" fill="white" opacity="0.7"/>
+      <circle cx="118" cy="100" r="5" fill="white" opacity="0.6"/>
+      <circle cx="68" cy="148" r="5" fill="white" opacity="0.6"/>
+      <circle cx="158" cy="118" r="4" fill="#4fc3f7" opacity="0.6"/>
+    </svg>
+    <span class="footer-logo-text">ORiON 制作委員会</span>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#strengths">Strengths</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 ORiON制作委員会. All rights reserved.</p>
+</footer>
+
+<script>
+/* ─── STAR CANVAS ─── */
+(function(){
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, stars = [], shootingStars = [];
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function randBetween(a,b){ return a + Math.random()*(b-a); }
+
+  function initStars(){
+    stars = [];
+    const count = Math.floor((W * H) / 3200);
+    for(let i=0; i<count; i++){
+      stars.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        r: randBetween(0.3, 2.0),
+        base: randBetween(0.2, 0.95),
+        speed: randBetween(0.3, 1.5),
+        phase: Math.random()*Math.PI*2,
+        color: Math.random() < 0.15 ? '#e8c96b'
+             : Math.random() < 0.25 ? '#4fc3f7'
+             : '#e8eaf6'
+      });
+    }
+  }
+
+  function spawnShootingStar(){
+    shootingStars.push({
+      x: randBetween(W*0.2, W*0.9),
+      y: randBetween(0, H*0.4),
+      len: randBetween(80, 200),
+      angle: Math.PI/6 + randBetween(-0.2, 0.2),
+      speed: randBetween(8, 18),
+      alpha: 1,
+      life: 0,
+      maxLife: randBetween(40, 80)
+    });
+  }
+
+  let frame = 0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const t = frame * 0.012;
+
+    // ambient nebula glow
+    const g1 = ctx.createRadialGradient(W*0.3, H*0.3, 0, W*0.3, H*0.3, W*0.4);
+    g1.addColorStop(0,'rgba(13,18,64,0.18)');
+    g1.addColorStop(1,'transparent');
+    ctx.fillStyle = g1; ctx.fillRect(0,0,W,H);
+
+    const g2 = ctx.createRadialGradient(W*0.75, H*0.65, 0, W*0.75, H*0.65, W*0.35);
+    g2.addColorStop(0,'rgba(7,9,30,0.14)');
+    g2.addColorStop(1,'transparent');
+    ctx.fillStyle = g2; ctx.fillRect(0,0,W,H);
+
+    // stars
+    stars.forEach(s=>{
+      const alpha = s.base * (0.6 + 0.4*Math.sin(t*s.speed + s.phase));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = s.color.replace(')',`,${alpha})`).replace('rgb','rgba').replace('#','rgba(') ;
+      // simple alpha approach
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = s.color;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    });
+
+    // shooting stars
+    shootingStars = shootingStars.filter(ss=>{
+      ss.life++;
+      ss.x += Math.cos(ss.angle)*ss.speed;
+      ss.y += Math.sin(ss.angle)*ss.speed;
+      const progress = ss.life/ss.maxLife;
+      ss.alpha = progress < 0.2 ? progress/0.2 : 1 - (progress-0.2)/0.8;
+      const gss = ctx.createLinearGradient(
+        ss.x - Math.cos(ss.angle)*ss.len, ss.y - Math.sin(ss.angle)*ss.len,
+        ss.x, ss.y
+      );
+      gss.addColorStop(0,'transparent');
+      gss.addColorStop(1,`rgba(232,234,246,${ss.alpha*0.9})`);
+      ctx.beginPath();
+      ctx.moveTo(ss.x - Math.cos(ss.angle)*ss.len, ss.y - Math.sin(ss.angle)*ss.len);
+      ctx.lineTo(ss.x, ss.y);
+      ctx.strokeStyle = gss;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      return ss.life < ss.maxLife;
+    });
+
+    frame++;
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  initStars();
+  draw();
+  window.addEventListener('resize',()=>{ resize(); initStars(); });
+
+  // shooting stars every 4–9 seconds
+  setInterval(spawnShootingStar, 4500);
+  setTimeout(spawnShootingStar, 1200);
+})();
+
+/* ─── LOGO TRANSPARENCY ─── */
+function makeLogoBgTransparent(imgEl) {
+  const canvas = document.createElement('canvas');
+  const src = imgEl.src;
+  const tmp = new Image();
+  tmp.crossOrigin = 'anonymous';
+  tmp.onload = function() {
+    canvas.width = tmp.naturalWidth;
+    canvas.height = tmp.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(tmp, 0, 0);
+    const d = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const px = d.data;
+    for (let i = 0; i < px.length; i += 4) {
+      const lum = (px[i]*0.299 + px[i+1]*0.587 + px[i+2]*0.114) / 255;
+      if (lum < 0.12) {
+        px[i+3] = 0;
+      } else if (lum < 0.28) {
+        px[i+3] = Math.round(((lum - 0.12) / 0.16) * 255);
+      }
+    }
+    ctx.putImageData(d, 0, 0);
+    imgEl.src = canvas.toDataURL('image/png');
+  };
+  tmp.src = src;
+}
+document.querySelectorAll('img[src="orion-logo.png"]').forEach(makeLogoBgTransparent);
+
+/* ─── NAV SCROLL ─── */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* ─── MOBILE MENU ─── */
+function toggleMenu(){
+  document.getElementById('navLinksMobile').classList.toggle('open');
+}
+document.getElementById('navLinksMobile').querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navLinksMobile').classList.remove('open');
+  });
+});
+
+/* ─── INTERSECTION REVEAL ─── */
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ─── CONTACT FORM ─── */
+function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = '送信中…';
+  btn.disabled = true;
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  })
+  .then(() => {
+    btn.textContent = '送信完了 — ありがとうございました';
+    btn.style.borderColor = 'rgba(79,195,247,0.5)';
+    btn.style.color = 'var(--cyan)';
+  })
+  .catch(() => {
+    btn.textContent = '送信に失敗しました。再度お試しください。';
+    btn.style.borderColor = 'rgba(255,100,100,0.5)';
+    btn.style.color = '#ff6464';
+    btn.disabled = false;
+  });
+}
+</script>
+</body>
+</html>

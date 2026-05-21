@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orion2026.jp/sitemap.xml
